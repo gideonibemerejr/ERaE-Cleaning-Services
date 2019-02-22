@@ -1,43 +1,53 @@
-const gulp        = require('gulp');
-const browserSync = require('browser-sync').create();
-const sass        = require('gulp-sass');
+const gulp = require('gulp'),
+    sass = require('gulp-sass');
 
-// Compile Sass & Inject Into Browser
-gulp.task('sass', function() {
-    return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'])
-        .pipe(sass())
-        .pipe(gulp.dest("src/css"))
-        .pipe(browserSync.stream());
-});
+const browserSync = require("browser-sync")
 
-// Move JS Files to src/js
-gulp.task('js', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js','node_modules/popper.js/dist/umd/popper.min.js'])
-        .pipe(gulp.dest("src/js"))
-        .pipe(browserSync.stream());
-});
+const paths = {
+    styles: {
+        src: "src/css/*.scss",
+    },
+    markup: {
+        src: 'src/*.html'
+    },
+    dest: "dist"
+}
+function style() {
+    return gulp
+            .src(paths.styles.src)
+            .pipe(sass())
+            .on("error", sass.logError)
+            .pipe(gulp.dest(paths.dest))
+}
 
-// Watch Sass & Serve
-gulp.task('serve', ['sass'], function() {
+function markup() {
+    return gulp
+            .src(paths.markup.src)
+            .pipe(gulp.dest(paths.dest))
+}
 
+function watchStyle() {
+    gulp.watch(paths.styles.src, style)
+}
+
+function watchMarkup() {
+    gulp.watch(paths.markup.src, markup).on("change", browserSync.reload)
+}
+
+const compile = gulp.parallel(markup, style)
+
+function startServer() {
     browserSync.init({
-        server: "./src"  
-    });
+        server: {
+            baseDir: "dist"
+        }
+    })
+}
 
-    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass']);
-    gulp.watch("src/*.html").on('change', browserSync.reload);
-});
+const serve = gulp.series(compile, startServer)
 
-// Move Fonts to src/fonts
-gulp.task('fonts', function() {
-  return gulp.src('node_modules/font-awesome/fonts/*')
-    .pipe(gulp.dest('src/fonts'))
-})
+const watch = gulp.parallel(watchMarkup, watchStyle)
 
-// Move Font Awesome CSS to src/css
-gulp.task('fa', function() {
-  return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
-    .pipe(gulp.dest('src/css'))
-})
+const defaultTasks = gulp.parallel(serve, watch)
 
-gulp.task('default', ['js','serve', 'fa', 'fonts']);
+exports.default = defaultTasks
