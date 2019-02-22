@@ -1,1 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+$font-family-sans-serif: 'Lato', sans-serif;
+$theme-colors: (
+  "primary": #a4dada,
+  "secondary": #404348,
+);
+
+
+.box-shadow {
+    -webkit-box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
+    -moz-box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
+    box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
+}
+
+.satisfaction-img {
+    display: block;
+    padding: 0 !important;
+}
+.satisfaction-text{ 
+    background-color: var(--primary);
+    min-height: 40vh;
+}
+
+.footer {
+    min-height: 50vh;
+    a{
+        color: var(--secondary);
+    }
+    a:hover {
+        color: var(--dark)
+    }
+}
+body {
+    overflow-x: hidden;
+}
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.jumbotron {
+    background-color: white;
+}

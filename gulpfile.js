@@ -27,7 +27,7 @@ function markup() {
 }
 
 function watchStyle() {
-    gulp.watch(paths.styles.src, style)
+    gulp.watch(paths.styles.src, style).on("change", browserSync.relo)
 }
 
 function watchMarkup() {
