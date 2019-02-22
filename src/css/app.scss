@@ -4,24 +4,29 @@ $theme-colors: (
   "primary": #a4dada,
   "secondary": #404348,
 );
-
-
+.icon {
+    width: 30%;
+    height: 30%;
+}
 .box-shadow {
     -webkit-box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
     -moz-box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
     box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
 }
+.jumbotron-satisfaction {
+    
+}
+.jumbotron-reliable {
+    min-height: 75vh;
+}
 
 .satisfaction-img {
-    display: block;
+    display: none;
     padding: 0 !important;
-}
-.satisfaction-text{ 
-    background-color: var(--primary);
-    min-height: 40vh;
 }
 
 .footer {
+    padding: 64px;
     min-height: 50vh;
     a{
         color: var(--secondary);
@@ -36,5 +41,27 @@ body {
 @import "node_modules/bootstrap/scss/bootstrap";
 
 .jumbotron {
-    background-color: white;
+    background-color:transparent;
+}
+@media (min-width: 992px) { 
+   .jumbotron-guarantee {
+       text-align: left;
+   }
+   .guarantee {
+    display: flex;
+   }
+ }
+
+@media (min-width: 768px) {
+    .icon {
+        width: 10%;
+        height: 10%;
+    }
+    .satisfaction-img {
+        display: block;
+        padding: 0 !important;
+    }
+    .jumbotron-reliable {
+        min-height: 40vh;
+    }
 }

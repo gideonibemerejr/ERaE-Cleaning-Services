@@ -1,18 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
+.icon {
+  width: 30%;
+  height: 30%; }
+
 .box-shadow {
   -webkit-box-shadow: 19px 17px 23px -23px #a3a3a3;
   -moz-box-shadow: 19px 17px 23px -23px #a3a3a3;
   box-shadow: 19px 17px 23px -23px #a3a3a3; }
 
+.jumbotron-reliable {
+  min-height: 75vh; }
+
 .satisfaction-img {
-  display: block;
+  display: none;
   padding: 0 !important; }
 
-.satisfaction-text {
-  background-color: var(--primary);
-  min-height: 40vh; }
-
 .footer {
+  padding: 64px;
   min-height: 50vh; }
   .footer a {
     color: var(--secondary); }
@@ -7045,4 +7049,20 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 .jumbotron {
-  background-color: white; }
+  background-color: transparent; }
+
+@media (min-width: 992px) {
+  .jumbotron-guarantee {
+    text-align: left; }
+  .guarantee {
+    display: flex; } }
+
+@media (min-width: 768px) {
+  .icon {
+    width: 10%;
+    height: 10%; }
+  .satisfaction-img {
+    display: block;
+    padding: 0 !important; }
+  .jumbotron-reliable {
+    min-height: 40vh; } }
