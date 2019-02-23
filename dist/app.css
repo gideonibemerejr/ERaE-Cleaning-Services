@@ -7053,7 +7053,7 @@ a:hover {
 
 .card {
   min-width: 18rem;
-  margin: 2rem;
+  margin: 5rem;
   max-height: 20rem; }
   .card .card-body {
     display: flex;
@@ -7082,8 +7082,26 @@ a:hover {
 
 @media (max-width: 768px) {
   .jumbotron h1 {
-    font-size: 32px; } }
+    font-size: 48px; }
+  .card {
+    min-width: 18rem;
+    margin: 5rem;
+    max-height: 20rem; }
+    .card .card-body {
+      display: flex;
+      align-items: center; }
+    .card .card-title {
+      margin-bottom: 5px; } }
 
 @media (max-width: 576px) {
   .jumbotron h1 {
-    font-size: 24px; } }
+    font-size: 24px; }
+  .card {
+    min-width: 18rem;
+    margin: 5rem;
+    max-height: 20rem; }
+    .card .card-body {
+      display: flex;
+      align-items: center; }
+    .card .card-title {
+      margin-bottom: 5px; } }
