@@ -22,7 +22,11 @@ body {
 .jumbotron-reliable {
     min-height: 75vh;
 }
-
+h5 {
+    a, a:hover{
+        text-decoration: underline;
+    }
+}
 .satisfaction-img {
     display: none;
     padding: 0 !important;
@@ -62,17 +66,20 @@ a:hover {
 
 @media (min-width: 992px) { 
    .jumbotron-guarantee {
+       padding: 0px 40px 0 40px;
        text-align: left;
+       max-width: 80%;
    }
    .guarantee {
     display: flex;
    }
+   
  }
 
 @media (min-width: 768px) {
     .icon {
-        width: 10%;
-        height: 10%;
+        width: 20%;
+        height: 20%;
     }
     .satisfaction-img {
         display: block;
