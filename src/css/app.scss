@@ -22,6 +22,9 @@ body {
 .jumbotron-reliable {
     min-height: 75vh;
 }
+a.dropdown-toggle:hover{
+    cursor: pointer;
+}
 h5 {
     a {
         color: var(--black);
@@ -31,6 +34,9 @@ h5 {
         text-decoration: underline;
         color: var(--gray);
     }
+}
+h3 {
+    line-height: 1.6!important;
 }
 .satisfaction-img {
     display: none;
@@ -67,7 +73,7 @@ h5 {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        p {
+        h5 {
             margin-bottom: 4px;
            
         }
@@ -89,6 +95,11 @@ h5 {
 }
 // importing all of bootstrap -- must do.
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.jumbotron-header {
+   display: none;
+}
+
 a{
     color: var(--gray);
 }
@@ -182,8 +193,8 @@ a:hover {
  } 
 @media (min-width: 768px) {
     .icon {
-        width: 20%;
-        height: 20%;
+        width: 10%;
+        height: 10%;
     }
     .satisfaction-img {
         display: block;
@@ -195,6 +206,43 @@ a:hover {
     .card-img-top {
         max-height: 232px;
         max-width: 348px;
+    }
+    .jumbotron-header {
+        min-height: 50vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0% 70% ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .jumbotron-text {
+        color: var(--light);
+        text-shadow: 1px 1px 1px #999;
+    }
+    .home {
+        background-image: url(/img/counter-top.jpeg);
+    }
+    .deep {
+        background-image: url(/img/deep-clean.jpeg);
+    }
+    .office {
+        background-image: url(/img/office-cleaning.jpeg);
+    }
+    .organizing{
+        background-image: url(/img/organizing.jpeg);
+    }
+    .tidy {
+        background-image: url(/img/tidy-2.jpeg);
+    }
+    .moving {
+        background-image: url(/img/tidy-up.jpeg);
+    }
+    .contact {
+        background-image: url(/img/contact.jpeg);
+    }
+    .services {
+        background-image: url(/img/services.jpeg);
     }
 }
 @media (max-width: 768px) {

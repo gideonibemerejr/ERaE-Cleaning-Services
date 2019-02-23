@@ -11,13 +11,13 @@ const paths = {
         src: "src/css/*.scss",
     },
     markup: {
-        src: 'src/*.html'
+        src: "src/*.html"
     },
     images: {
-        src: 'src/img/*.jpeg',
+        src: "src/img/*",
         dest: 'dist/img'
     },
-    dest: 'dist'
+    dest: "dist"
 }
 function style() {
     return gulp
