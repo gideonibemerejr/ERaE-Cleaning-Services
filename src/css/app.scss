@@ -4,18 +4,23 @@ $theme-colors: (
   "primary": #a4dada,
   "secondary": #404348,
 );
-.icon {
-    width: 30%;
-    height: 30%;
+// Utilities 
+body {
+    overflow-x: hidden;
 }
 .box-shadow {
     -webkit-box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
     -moz-box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
     box-shadow: 19px 17px 23px -23px rgba(163,163,163,1);
 }
-.jumbotron-satisfaction {
-    
+.icon {
+    width: 30%;
+    height: 30%;
 }
+
+
+
+// Components
 .jumbotron-reliable {
     min-height: 75vh;
 }
@@ -35,14 +40,20 @@ $theme-colors: (
         color: var(--dark)
     }
 }
-body {
-    overflow-x: hidden;
-}
-@import "node_modules/bootstrap/scss/bootstrap";
 
+
+
+// importing all of bootstrap -- must do.
+@import "node_modules/bootstrap/scss/bootstrap";
+.card {
+    min-width: 18rem;
+    margin: 2rem;
+}
 .jumbotron {
     background-color:transparent;
 }
+// Media Queries
+
 @media (min-width: 992px) { 
    .jumbotron-guarantee {
        text-align: left;
@@ -63,5 +74,15 @@ body {
     }
     .jumbotron-reliable {
         min-height: 40vh;
+    }
+}
+@media (max-width: 768px) {
+    .jumbotron h1 {
+        font-size: 32px;
+    }
+}
+@media (max-width: 576px) {
+    .jumbotron h1 {
+        font-size: 24px;
     }
 }
