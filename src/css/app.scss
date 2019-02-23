@@ -23,8 +23,13 @@ body {
     min-height: 75vh;
 }
 h5 {
-    a, a:hover{
+    a {
+        color: var(--black);
         text-decoration: underline;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: var(--gray);
     }
 }
 .satisfaction-img {
@@ -35,7 +40,7 @@ h5 {
 .footer {
     padding: 64px;
     min-height: 50vh;
-    
+    background-color: #C4C4C4;
 }
 .btn-service:hover{
     border: 1px solid var(--primary);
@@ -44,7 +49,7 @@ h5 {
 .btn-service {
     width: 100%;
     height: 4rem;
-    margin-bottom: 5px;
+    margin-bottom: 16px;
     border: 1px solid var(--light);
     display: flex;
     .btn-icon {
@@ -69,7 +74,20 @@ h5 {
         }
     }
 }
+.form-newsletter {
+    width: 60%;
+    height: 60px;
+    border: .5px solid var(--light);
+    padding:1rem;
 
+}
+.btn-newsletter {
+    color: var(--light);
+    background-color: var(--secondary);
+    border: none;
+    padding:1rem;
+
+}
 // importing all of bootstrap -- must do.
 @import "node_modules/bootstrap/scss/bootstrap";
 a{
@@ -79,9 +97,12 @@ a:hover {
     color: var(--dark);
     text-decoration: none;
 }
+.card-deck {
+    margin-bottom: 8rem;
+}
 .card {
     min-width: 18rem;
-    margin: 5rem;
+    margin: 3rem;
     max-height: 20rem;
     .card-body {
       display: flex;
@@ -96,17 +117,68 @@ a:hover {
     background-color:transparent;
 }
 // Media Queries
-
-@media (min-width: 992px) { 
+@media (min-width: 1200px) {
+    .service-container {
+        .btn-service:hover{
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-service {
+            width: 20rem;
+            height: 5rem;
+            margin-bottom: 16px;
+            border: 1px solid var(--light);
+            display: flex;
+            .btn-icon {
+                display: flex;
+                width: 8rem;
+                background-color: var(--primary);
+                .icon {
+                    width: 3rem;
+                    height: 3rem;
+                    align-self: center;
+                }
+            }
+            .btn-text {
+                justify-content: center;
+            }
+            i {display: none;}
+        }
+     }
+    }
+@media (min-width: 800px) { 
    .jumbotron-guarantee {
        padding: 0px 40px 0 40px;
        text-align: left;
        max-width: 80%;
    }
    .guarantee {
-    display: flex;
+        display: flex;
    }
-   
+   .service-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 8rem;
+    }   
+    .btn-service {
+        width: 12rem;
+        height: 5em;
+        margin-bottom: 16px;
+        border: 1px solid var(--light);
+        display: flex;
+        .btn-icon {
+            display: flex;
+            width: 8rem;
+            background-color: var(--primary);
+            .icon {
+                width: 3rem;
+                height: 3rem;
+                align-self: center;
+            }
+        }
+        i {display: none;}
+    }
  }
 
 @media (min-width: 768px) {
@@ -121,6 +193,9 @@ a:hover {
     .jumbotron-reliable {
         min-height: 40vh;
     }
+    
+    
+    
 }
 @media (max-width: 768px) {
     .jumbotron  {
@@ -139,7 +214,6 @@ a:hover {
         .card-title {
             margin-bottom: 5px;
         }
-        
     }
 }
 
@@ -161,6 +235,9 @@ a:hover {
             margin-bottom: 5px;
         }
         
+    }
+    .newsletter {
+        display: none;
     }
     
 }
