@@ -33,21 +33,29 @@ body {
 .footer {
     padding: 64px;
     min-height: 50vh;
-    a{
-        color: var(--secondary);
-    }
-    a:hover {
-        color: var(--dark)
-    }
+    
 }
-
-
-
 // importing all of bootstrap -- must do.
 @import "node_modules/bootstrap/scss/bootstrap";
+a{
+    color: var(--gray);
+}
+a:hover {
+    color: var(--dark);
+    text-decoration: none;
+}
 .card {
     min-width: 18rem;
     margin: 2rem;
+    max-height: 20rem;
+    .card-body {
+      display: flex;
+      align-items: center;
+    }
+    .card-title {
+        margin-bottom: 5px;
+    }
+    
 }
 .jumbotron {
     background-color:transparent;
