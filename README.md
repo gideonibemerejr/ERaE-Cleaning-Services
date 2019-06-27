@@ -15,6 +15,7 @@ ERaE Cleaning Services is a home and office cleaning service looking to provide 
 - [SASS](https://sass-lang.com/)
 - JS
 - [Gulp](https://gulpjs.com/)
+- [Bootstrap 4](https://www.getbootstrap.com)
 
 ## Getting Started
 To get started head to the deployed prototype [here](https://gideonibemerejr.github.io/eraecleaningservice/).
